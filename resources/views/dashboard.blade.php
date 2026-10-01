@@ -1,0 +1,73 @@
+@extends('layouts.app')
+
+@section('title', 'Dashboard')
+
+@section('content')
+
+<div class="mb-4">
+
+    <h1 class="fw-bold">
+        Dashboard
+    </h1>
+
+    <p class="text-muted">
+        Aplikasi Pengelolaan Data Peserta Sertifikasi
+    </p>
+
+</div>
+
+<div class="row g-4">
+
+    <div class="col-md-6">
+
+        <div class="card border-0 shadow-sm">
+
+            <div class="card-body">
+
+                <h6 class="text-muted">
+                    Total Peserta
+                </h6>
+
+                <h1 class="fw-bold text-primary">
+                    {{ $jumlahPeserta }}
+                </h1>
+
+                <a href="{{ route('peserta.index') }}"
+                   class="btn btn-primary">
+                    Kelola Peserta
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-6">
+
+        <div class="card border-0 shadow-sm">
+
+            <div class="card-body">
+
+                <h6 class="text-muted">
+                    Total Skema
+                </h6>
+
+                <h1 class="fw-bold text-success">
+                    {{ $jumlahSkema }}
+                </h1>
+
+                <a href="{{ route('skema.index') }}"
+                   class="btn btn-success">
+                    Kelola Skema
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@endsection
