@@ -8,10 +8,10 @@
 
     <div class="card-body">
 
-        <div class="d-flex justify-content-between mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
 
-            <h2 class="fw-bold">
-                Detail Skema Sertifikasi
+            <h2 class="fw-bold mb-0">
+                Detail Skema
             </h2>
 
             <a href="{{ route('skema.index') }}"
@@ -35,55 +35,40 @@
 
             <tr>
                 <th>Deskripsi</th>
-                <td>{{ $skema->deskripsi ?? '-' }}</td>
+                <td>
+                    {{ $skema->deskripsi ?? '-' }}
+                </td>
             </tr>
 
             <tr>
-                <th>Jumlah Peserta</th>
-                <td>{{ $skema->peserta->count() }} peserta</td>
+                <th>Dibuat</th>
+                <td>
+                    {{ $skema->created_at->format('d-m-Y H:i') }}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Terakhir Diubah</th>
+                <td>
+                    {{ $skema->updated_at->format('d-m-Y H:i') }}
+                </td>
             </tr>
 
         </table>
 
-        <h4 class="mt-4">
-            Peserta yang menggunakan skema ini
-        </h4>
+        <div class="mt-3">
 
-        <table class="table table-striped">
+            <a href="{{ route('skema.edit', $skema->id) }}"
+               class="btn btn-warning">
+                Edit Data
+            </a>
 
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Nomor Peserta</th>
-                    <th>Nama</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
+            <a href="{{ route('skema.index') }}"
+               class="btn btn-secondary">
+                Kembali
+            </a>
 
-            <tbody>
-
-            @forelse($skema->peserta as $peserta)
-
-                <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $peserta->nomor_peserta }}</td>
-                    <td>{{ $peserta->nama }}</td>
-                    <td>{{ $peserta->email }}</td>
-                </tr>
-
-            @empty
-
-                <tr>
-                    <td colspan="4" class="text-center">
-                        Belum ada peserta.
-                    </td>
-                </tr>
-
-            @endforelse
-
-            </tbody>
-
-        </table>
+        </div>
 
     </div>
 

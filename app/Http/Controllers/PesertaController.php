@@ -35,12 +35,12 @@ class PesertaController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'nik' => 'required|string|max:50|unique:peserta,nik',
+            'nik' => 'required|digits:16|unique:peserta,nik',
             'nama' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:peserta,email',
-            'no_hp' => 'nullable|string|max:20',
-            'alamat' => 'nullable|string',
-            'skema_sertifikasi_id' => 'required|exists:skema_sertifikasi,id',
+            'no_hp' => 'required|string|max:20',
+            'alamat' => 'required|string',
+            'skema_id' => 'required|exists:skema,id',
         ]);
 
         Peserta::create($validated);
@@ -67,12 +67,12 @@ class PesertaController extends Controller
     public function update(Request $request, Peserta $peserta)
     {
         $validated = $request->validate([
-            'nik' => 'required|string|max:50|unique:peserta,nik,' . $peserta->id,
+            'nik' => 'required|digits:16|unique:peserta,nik,' . $peserta->id,
             'nama' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:peserta,email,' . $peserta->id,
-            'no_hp' => 'nullable|string|max:20',
-            'alamat' => 'nullable|string',
-            'skema_sertifikasi_id' => 'required|exists:skema_sertifikasi,id',
+            'no_hp' => 'required|string|max:20',
+            'alamat' => 'required|string',
+            'skema_id' => 'required|exists:skema,id',
         ]);
 
         $peserta->update($validated);

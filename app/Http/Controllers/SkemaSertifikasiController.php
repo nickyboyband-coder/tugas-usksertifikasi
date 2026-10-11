@@ -22,7 +22,7 @@ class SkemaSertifikasiController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'kode_skema' => 'required|string|max:50|unique:skema_sertifikasi,kode_skema',
+            'kode_skema' => 'required|string|max:50|unique:skema,kode_skema',
             'nama_skema' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
         ]);
@@ -49,7 +49,7 @@ class SkemaSertifikasiController extends Controller
     public function update(Request $request, SkemaSertifikasi $skema)
     {
         $validated = $request->validate([
-            'kode_skema' => 'required|string|max:50|unique:skema_sertifikasi,kode_skema,' . $skema->id,
+            'kode_skema' => 'required|string|max:50|unique:skema,kode_skema,' . $skema->id,
             'nama_skema' => 'required|string|max:255',
             'deskripsi' => 'nullable|string',
         ]);

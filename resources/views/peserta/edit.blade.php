@@ -75,7 +75,7 @@
             <div class="mb-4">
                 <label class="form-label">Skema Sertifikasi</label>
                 <select
-                    name="skema_sertifikasi_id"
+                    name="skema_id"
                     class="form-select"
                     required>
 
@@ -86,7 +86,7 @@
                     @foreach($skema as $item)
                         <option
                             value="{{ $item->id }}"
-                            {{ old('skema_sertifikasi_id', $peserta->skema_sertifikasi_id) == $item->id ? 'selected' : '' }}>
+                            {{ old('skema_id', $peserta->skema_id) == $item->id ? 'selected' : '' }}>
                             {{ $item->kode_skema }} - {{ $item->nama_skema }}
                         </option>
                     @endforeach

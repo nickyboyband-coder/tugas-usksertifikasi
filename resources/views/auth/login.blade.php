@@ -17,16 +17,18 @@
 
 </head>
 <style>
-    body { background : #898a8d; }">
+    body {
+        background: #f4f5f8;
+    }
 </style>
 
-<div class="container">
+<div class="container min-vh-100 d-flex justify-content-center align-items-center">
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center w-100">
 
         <div class="col-12 col-sm-10 col-md-8 col-lg-5">
 
-            <div class="card border-0 shadow-lg rounded-4" style="background-color : #0cefff";>
+            <div class="card border-0 " >
 
                 <div class="card-body p-4 p-md-5">
 
@@ -35,7 +37,7 @@
 
                     <div class="text-center mb-4">
 
-                        <h1 class="text-white fw-bold mb-2">
+                        <h1 class="text-bold fw-bold mb-2">
                             Admin Login
                         </h1>
 
@@ -143,7 +145,7 @@
 
                             <button
                                 type="submit"
-                                class="btn btn-primary btn-lg fw-bold">
+                                class="btn btn-secondary btn-lg fw-bold">
 
                                 Login
 

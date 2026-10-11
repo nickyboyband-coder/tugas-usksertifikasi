@@ -14,14 +14,14 @@ class Peserta extends Model
         'email',
         'no_hp',
         'alamat',
-        'skema_sertifikasi_id',
+        'skema_id',
     ];
 
     public function skema()
     {
         return $this->belongsTo(
             SkemaSertifikasi::class,
-            'skema_sertifikasi_id'
+            'skema_id'
         );
     }
 }

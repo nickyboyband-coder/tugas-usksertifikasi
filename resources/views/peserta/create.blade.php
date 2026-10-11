@@ -37,7 +37,7 @@
             <div class="mb-3">
 
                 <label class="form-label">
-                    Nomor Peserta
+                    Nik
                 </label>
 
                 <input
@@ -113,7 +113,7 @@
                 </label>
 
                 <select
-                    name="skema_sertifikasi_id"
+                    name="skema_id"
                     class="form-select"
                     required>
 
@@ -125,7 +125,7 @@
 
                         <option
                             value="{{ $item->id }}"
-                            {{ old('skema_sertifikasi_id') == $item->id ? 'selected' : '' }}>
+                            {{ old('skema_id') == $item->id ? 'selected' : '' }}>
 
                             {{ $item->kode_skema }}
                             -

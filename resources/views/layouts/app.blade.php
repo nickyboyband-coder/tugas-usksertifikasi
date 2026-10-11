@@ -10,12 +10,12 @@
 
 <nav class="navbar navbar-dark bg-secondary">
     <div class="container">
-        <a class="navbar-brand fw-bold" href="{{ route('peserta.index') }}">
-            Data Sertifikasi
+        <a class="navbar-brand fw-bold fs-3" >
+            Aplikasi Sertifikasi
         </a>
 
         <div class="d-flex align-items-center gap-2">
-            <!-- Tombol Dashboard -->
+           
             <a href="{{ route('dashboard') }}" class="btn btn-light btn-sm">
                 Dashboard
             </a>

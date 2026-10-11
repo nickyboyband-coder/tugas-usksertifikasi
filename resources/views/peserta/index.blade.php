@@ -54,6 +54,8 @@
                         <th>Nik</th>
                         <th>Nama</th>
                         <th>Email</th>
+                        <th>No HP</th>
+                        <th>Alamat</th>
                         <th>Skema</th>
                         <th width="280">Aksi</th>
                     </tr>
@@ -80,6 +82,14 @@
 
                         <td>
                             {{ $item->email }}
+                        </td>
+
+                        <td>
+                            {{ $item->no_hp}}
+                        </td>
+
+                        <td>
+                            {{ $item->alamat }}
                         </td>
 
                         <td>

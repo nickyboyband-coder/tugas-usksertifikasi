@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('no_hp')->nullable();
             $table->text('alamat')->nullable();
 
-            $table->foreignId('skema_sertifikasi_id')
-                ->constrained('skema_sertifikasi')
+            $table->foreignId('skema_id')
+                ->constrained('skema')
                 ->cascadeOnUpdate()
                 ->restrictOnDelete();
 

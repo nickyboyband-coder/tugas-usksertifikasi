@@ -65,9 +65,10 @@
 
                         <td>
 
+                            {{-- DETAIL --}}
                             <a
                                 href="{{ route('skema.show', $item->id) }}"
-                                class="btn btn-info btn-sm text-white">
+                                class="btn btn-info btn-sm">
                                 Detail
                             </a>
 

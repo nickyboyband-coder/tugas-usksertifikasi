@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class SkemaSertifikasi extends Model
 {
-    protected $table = 'skema_sertifikasi';
+    protected $table = 'skema';
 
     protected $fillable = [
         'kode_skema',
@@ -18,7 +18,7 @@ class SkemaSertifikasi extends Model
     {
         return $this->hasMany(
             Peserta::class,
-            'skema_sertifikasi_id'
+            'skema_id'
         );
     }
 }
