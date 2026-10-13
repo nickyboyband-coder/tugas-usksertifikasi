@@ -9,10 +9,21 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $user = auth()->user();
+
         $jumlahPeserta = Peserta::count();
         $jumlahSkema = SkemaSertifikasi::count();
 
-        return view('dashboard', compact(
+        if ($user->role === 'admin') {
+            return view('dashboard.admin', compact(
+                'user',
+                'jumlahPeserta',
+                'jumlahSkema'
+            ));
+        }
+
+        return view('dashboard.user', compact(
+            'user',
             'jumlahPeserta',
             'jumlahSkema'
         ));

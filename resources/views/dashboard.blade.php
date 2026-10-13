@@ -1,32 +1,28 @@
+
 @extends('layouts.app')
 
-@section('title', 'Dashboard')
+@section('title', 'Dashboard Admin')
 
 @section('content')
 
 <div class="mb-4">
+    <h1 class="fw-bold">Dashboard Admin</h1>
 
-    <h1 class="fw-bold">
-        Dashboard
-    </h1>
+    <p class="text-muted">
+        Selamat datang, <strong>{{ $user->name }}</strong>
+        <span class="badge bg-primary">Admin</span>
+    </p>
 
     <p class="text-muted">
         Aplikasi Pengelolaan Data Peserta Sertifikasi
     </p>
-
 </div>
 
 <div class="row g-4">
-
     <div class="col-md-6">
-
         <div class="card border-0 shadow-sm">
-
             <div class="card-body">
-
-                <h6 class="text-muted">
-                    Total Peserta
-                </h6>
+                <h6 class="text-muted">Total Peserta</h6>
 
                 <h1 class="fw-bold text-primary">
                     {{ $jumlahPeserta }}
@@ -36,22 +32,14 @@
                    class="btn btn-primary">
                     Kelola Peserta
                 </a>
-
             </div>
-
         </div>
-
     </div>
 
     <div class="col-md-6">
-
         <div class="card border-0 shadow-sm">
-
             <div class="card-body">
-
-                <h6 class="text-muted">
-                    Total Skema
-                </h6>
+                <h6 class="text-muted">Total Skema</h6>
 
                 <h1 class="fw-bold text-success">
                     {{ $jumlahSkema }}
@@ -61,13 +49,9 @@
                    class="btn btn-success">
                     Kelola Skema
                 </a>
-
             </div>
-
         </div>
-
     </div>
-
 </div>
 
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Peserta extends Model
 {
@@ -15,6 +16,7 @@ class Peserta extends Model
         'no_hp',
         'alamat',
         'skema_id',
+            
     ];
 
     public function skema()
@@ -23,5 +25,10 @@ class Peserta extends Model
             SkemaSertifikasi::class,
             'skema_id'
         );
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

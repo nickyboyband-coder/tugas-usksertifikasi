@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class SkemaSertifikasiController extends Controller
 {
+    // Daftar skema untuk Admin
     public function index()
     {
         $skema = SkemaSertifikasi::latest()->paginate(10);
@@ -14,11 +15,19 @@ class SkemaSertifikasiController extends Controller
         return view('skema.index', compact('skema'));
     }
 
+    // Daftar skema untuk User
+    public function userIndex()
+    {
+        return $this->index();
+    }
+
+    // Form tambah skema (Admin)
     public function create()
     {
         return view('skema.create');
     }
 
+    // Simpan skema (Admin)
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -34,6 +43,7 @@ class SkemaSertifikasiController extends Controller
             ->with('success', 'Skema sertifikasi berhasil ditambahkan.');
     }
 
+    // Detail skema
     public function show(SkemaSertifikasi $skema)
     {
         $skema->load('peserta');
@@ -41,11 +51,19 @@ class SkemaSertifikasiController extends Controller
         return view('skema.show', compact('skema'));
     }
 
+    // Detail skema untuk User
+    public function userShow(SkemaSertifikasi $skema)
+    {
+        return $this->show($skema);
+    }
+
+    // Form edit skema (Admin)
     public function edit(SkemaSertifikasi $skema)
     {
         return view('skema.edit', compact('skema'));
     }
 
+    // Update skema (Admin)
     public function update(Request $request, SkemaSertifikasi $skema)
     {
         $validated = $request->validate([
@@ -61,6 +79,7 @@ class SkemaSertifikasiController extends Controller
             ->with('success', 'Skema sertifikasi berhasil diperbarui.');
     }
 
+    // Hapus skema (Admin)
     public function destroy(SkemaSertifikasi $skema)
     {
         if ($skema->peserta()->exists()) {
